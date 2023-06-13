@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ClienteService } from './cliente/cliente.service';
 import { PeliculasService } from './peliculas/peliculas.service';
+import { CineService } from './cine/cine.service';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,7 @@ import { PeliculasService } from './peliculas/peliculas.service';
     SalasComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
-  providers: [ClienteService, PeliculasService],
+  providers: [ClienteService, PeliculasService, CineService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
