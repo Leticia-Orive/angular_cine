@@ -3,30 +3,31 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ClientesComponent } from './clientes/clientes.component';
+import { ClienteComponent } from './cliente/cliente.component';
 import { ActoresComponent } from './actores/actores.component';
 import { CineComponent } from './cine/cine.component';
 import { GrupoComponent } from './grupo/grupo.component';
 import { LoginComponent } from './login/login.component';
 import { PeliculasComponent } from './peliculas/peliculas.component';
 import { SalasComponent } from './salas/salas.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { ClienteService } from './cliente/cliente.service';
+import { PeliculasService } from './peliculas/peliculas.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ClientesComponent,
+    ClienteComponent,
     ActoresComponent,
     CineComponent,
     GrupoComponent,
     LoginComponent,
     PeliculasComponent,
-    SalasComponent
+    SalasComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
+  providers: [ClienteService, PeliculasService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
