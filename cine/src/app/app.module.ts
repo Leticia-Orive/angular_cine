@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ClienteComponent } from './cliente/cliente.component';
@@ -15,6 +14,7 @@ import { FormsModule } from '@angular/forms';
 import { ClienteService } from './cliente/cliente.service';
 import { PeliculasService } from './peliculas/peliculas.service';
 import { CineService } from './cine/cine.service';
+import { CineModule } from './cine/cine.module';
 
 @NgModule({
   declarations: [
@@ -27,7 +27,14 @@ import { CineService } from './cine/cine.service';
     PeliculasComponent,
     SalasComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    CineModule,
+  ],
+
   providers: [ClienteService, PeliculasService, CineService],
   bootstrap: [AppComponent],
 })

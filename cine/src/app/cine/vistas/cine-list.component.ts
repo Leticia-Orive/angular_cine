@@ -9,12 +9,16 @@ import { CineService } from '../cine.service';
 })
 export class CineListComponent implements OnInit {
   cines: Cine[] | undefined;
+
   constructor(private cineService: CineService) {}
 
   ngOnInit() {
     this.getCines();
   }
+
   getCines() {
-    this.cineService.getCines().subscribe((cines) => (this.cines = cines));
+    this.cineService.getCines().subscribe((cines) => {
+      this.cines = cines;
+    });
   }
 }
